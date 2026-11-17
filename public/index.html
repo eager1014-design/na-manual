@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>나 사용설명서 | 3분 예민 성향 테스트 · 무료 결과 카드</title>
+<meta name="description" content="예민한 게 아니라 설명서가 없었던 거예요. 3분 질문에 답하면 언제 지치고 뭘 하면 회복되는지, 나를 대하는 법까지 한 장으로 정리해 드려요. 전부 무료, 회원가입 없음.">
+<link rel="canonical" href="https://na-manual.pages.dev/">
+<meta name="robots" content="index,follow">
+<!-- 검색엔진 소유 확인 태그: Search Console / 서치어드바이저에서 받은 태그를 이 아래에 붙여넣기 -->
+<!-- <meta name="google-site-verification" content="여기에_구글_코드"> -->
+<!-- <meta name="naver-site-verification" content="여기에_네이버_코드"> -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="나 사용설명서">
+<meta property="og:title" content="나 사용설명서 | 3분 예민 성향 테스트">
+<meta property="og:description" content="언제 지치고, 뭘 하면 회복되는지. 나를 설명하는 한 장짜리 카드를 무료로 받아보세요.">
+<meta property="og:url" content="https://na-manual.pages.dev/">
+<meta property="og:image" content="https://na-manual.pages.dev/assets/og.png">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffe14d">
+<link rel="icon" type="image/png" href="assets/char/head.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"나 사용설명서","url":"https://na-manual.pages.dev/","inLanguage":"ko","description":"3분 예민 성향 테스트와 무료 결과 카드"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#111111; --sub:#5b5b5b; --line:#111111; --soft:#f4f4f2;
+    --hi:#ffe14d; --blue:#2160D6; --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .pen{font-family:'Nanum Pen Script',cursive;font-weight:400}
+  .hl{background:linear-gradient(transparent 55%,var(--hi) 55%);padding:0 2px}
+  .draft{position:fixed;right:12px;bottom:12px;z-index:50;background:var(--ink);color:#fff;font-size:12px;padding:6px 10px;border-radius:999px;opacity:.85}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:2px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.5px}
+  .logo svg{width:34px;height:34px}
+  .menu{display:flex;gap:26px;font-size:15px;font-weight:500}
+  .menu a:hover{text-decoration:underline;text-underline-offset:4px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--line);border-radius:999px;padding:12px 22px;font-weight:700;font-size:15px;background:#fff;cursor:pointer;transition:transform .12s, box-shadow .12s;font-family:inherit;color:var(--ink)}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--line)}
+  .btn.primary{background:var(--hi)}
+  .btn.dark{background:var(--ink);color:#fff}
+  .nav .btn{padding:8px 16px;font-size:14px}
+
+  /* hero */
+  .hero{padding:72px 0 56px;border-bottom:2px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  .eyebrow{display:inline-block;border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;margin-bottom:20px}
+  h1{font-size:clamp(34px,5.4vw,58px);line-height:1.18;font-weight:900;letter-spacing:-1.5px}
+  .hero p.lead{margin:22px 0 30px;font-size:18px;color:var(--sub);max-width:520px}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .meta{margin-top:18px;font-size:13px;color:var(--sub)}
+  .hero-art{position:relative}
+  .hero-art .duo{display:flex;align-items:flex-end;justify-content:center;gap:6%;padding-top:130px}
+  .hero-art .duo figure{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .hero-art .duo img{height:300px;width:auto}
+  .hero-art .duo figcaption{font-size:13px;font-weight:700;border:2px solid var(--line);border-radius:999px;padding:2px 12px;background:#fff}
+  .hero-art .duo figure.after figcaption{background:var(--hi)}
+  .hero-art .arrow{font-size:46px;align-self:center;margin-bottom:60px}
+  .bubble{position:absolute;border:2px solid var(--line);background:#fff;border-radius:16px;padding:8px 14px;font-size:24px;line-height:1.2;white-space:nowrap}
+  .bubble.b1{top:0;left:-4%}
+  .bubble.b2{top:62px;left:-12%;font-size:21px}
+  .bubble.b3{top:40px;right:-4%;background:var(--hi)}
+  .logo img{height:34px;width:auto}
+  .pain{display:grid;grid-template-columns:1fr 84px;gap:0 10px}
+  .pain img{height:130px;width:auto;grid-row:1/3;grid-column:2;align-self:end;justify-self:center}
+  .steps .step{padding-bottom:128px}
+  .step img{height:104px;width:auto;position:absolute;right:20px;bottom:16px}
+  .step .price{position:absolute;left:26px;bottom:24px}
+  .card .face{float:right;height:110px;width:auto;margin:-4px -6px 0 8px}
+  .gift-art .pair{display:flex;justify-content:space-between;align-items:flex-end;margin-top:6px}
+  .gift-art .pair img{height:120px;width:auto}
+  .final .wrap{display:flex;flex-direction:column;align-items:center}
+  .final img{height:170px;width:auto;margin-bottom:18px;filter:invert(1)}
+
+  /* sections */
+  section{padding:80px 0;border-bottom:2px solid var(--line)}
+  .sec-head{margin-bottom:40px}
+  .sec-head .tag{font-size:26px;color:var(--blue)}
+  h2{font-size:clamp(26px,3.6vw,38px);font-weight:900;letter-spacing:-1px;line-height:1.25}
+  .sec-head p{color:var(--sub);margin-top:10px;font-size:16px}
+
+  /* pain */
+  .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pain{border:2px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff}
+  .pain .q{font-size:30px;line-height:1.25;margin-bottom:10px}
+  .pain p{color:var(--sub);font-size:15px}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+  .step{border:2px solid var(--line);border-radius:var(--radius);padding:26px;position:relative;background:#fff}
+  .step .num{width:40px;height:40px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-weight:900;margin-bottom:14px;background:var(--hi)}
+  .step h3{font-size:19px;margin-bottom:6px}
+  .step p{font-size:15px;color:var(--sub)}
+  .step .price{margin-top:14px;font-weight:700;font-size:14px}
+
+  /* try */
+  .try{background:var(--soft)}
+  .try-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .quiz{border:2px solid var(--line);border-radius:var(--radius);background:#fff;padding:28px}
+  .quiz .bar{height:8px;border:2px solid var(--line);border-radius:999px;overflow:hidden;margin-bottom:20px}
+  .quiz .bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s}
+  .quiz .qtext{font-size:20px;font-weight:700;margin-bottom:18px;min-height:64px}
+  .opts{display:grid;gap:10px}
+  .opt{text-align:left;border:2px solid var(--line);border-radius:14px;padding:12px 16px;background:#fff;font-size:15px;cursor:pointer;font-family:inherit;color:var(--ink)}
+  .opt:hover{background:var(--hi)}
+  .result{display:none}
+  .result.on{display:block}
+
+  /* card */
+  .card{border:2px solid var(--line);border-radius:22px;background:#fff;padding:26px;box-shadow:8px 8px 0 var(--line);max-width:420px;margin:0 auto}
+  .card .top{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--sub)}
+  .card .type{font-size:44px;line-height:1.1;margin:14px 0 4px}
+  .card .one{font-weight:700;font-size:17px}
+  .card ul{list-style:none;margin:16px 0;display:grid;gap:8px}
+  .card li{font-size:14px;padding-left:22px;position:relative}
+  .card li::before{content:"";position:absolute;left:4px;top:8px;width:9px;height:9px;border:2px solid var(--line);border-radius:50%}
+  .meter{display:grid;grid-template-columns:72px 1fr;gap:6px 10px;align-items:center;font-size:12px;margin-top:6px}
+  .meter b{display:block;height:10px;border:2px solid var(--line);border-radius:999px;position:relative;overflow:hidden}
+  .meter b i{position:absolute;inset:0;background:var(--ink)}
+  .card .foot{margin-top:18px;padding-top:14px;border-top:2px dashed var(--line);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--sub)}
+  .stamp{border:2px solid var(--blue);color:var(--blue);border-radius:8px;padding:2px 8px;font-weight:900;transform:rotate(-6deg);font-size:12px}
+
+  /* products */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .plan{border:2px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;background:#fff}
+  .plan.best{background:var(--hi);transform:translateY(-8px);box-shadow:6px 6px 0 var(--line)}
+  .plan .name{font-weight:900;font-size:20px}
+  .plan .amt{font-size:34px;font-weight:900;margin:10px 0 2px;letter-spacing:-1px}
+  .plan .amt small{font-size:14px;font-weight:500;color:var(--sub)}
+  .plan.best .amt small{color:var(--ink)}
+  .plan ul{list-style:none;margin:16px 0 24px;display:grid;gap:8px;font-size:15px;flex:1}
+  .plan li::before{content:"— ";font-weight:700}
+  .note{font-size:13px;color:var(--sub);margin-top:16px}
+
+  /* gift */
+  .gift-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+  .gift-art{border:2px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--soft)}
+  .gift-art .msg{border:2px solid var(--line);border-radius:14px;background:#fff;padding:16px;font-size:15px;margin-bottom:12px}
+  .gift-art .msg.me{background:var(--hi);margin-left:40px}
+  .gift-art .msg .who{font-size:12px;color:var(--sub);font-weight:700;margin-bottom:4px}
+
+  /* maker */
+  .maker{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+  .maker img{height:220px;width:auto}
+  .maker blockquote{font-size:20px;font-weight:500;line-height:1.7}
+  .maker .by{margin-top:12px;color:var(--sub);font-size:14px}
+  .reviews{margin-top:36px;border:2px dashed var(--line);border-radius:var(--radius);padding:22px;text-align:center;color:var(--sub);font-size:14px}
+
+  /* faq */
+  details{border:2px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;background:#fff}
+  summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+  summary::after{content:"+";font-weight:900}
+  details[open] summary::after{content:"−"}
+  details p{margin-top:10px;color:var(--sub);font-size:15px}
+
+  /* final */
+  .final{text-align:center;background:var(--ink);color:#fff;border-bottom:none}
+  .final h2{color:#fff}
+  .final p{color:#cfcfcf;margin:14px 0 28px}
+  .final .btn{border-color:#fff}
+  footer{padding:36px 0;font-size:13px;color:var(--sub)}
+  footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .menu{display:none}
+    .hero{padding:44px 0 40px}
+    .hero-grid,.try-grid,.gift-grid{grid-template-columns:1fr}
+    .hero-art{max-width:340px;margin:0 auto}
+    .pains,.steps,.plans{grid-template-columns:1fr}
+    .plan.best{transform:none}
+    .maker{grid-template-columns:1fr;text-align:center}
+    .maker img{margin:0 auto}
+    .hero-art .duo img{height:220px}
+    .bubble{font-size:19px}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <img src="assets/char/head.png" alt="나 사용설명서 로고 캐릭터">
+      나 사용설명서
+    </a>
+    <nav class="menu">
+      <a href="#how">어떻게</a>
+      <a href="#try">미리 해보기</a>
+      <a href="#plans">설명서 종류</a>
+      <a href="#gift">선물하기</a>
+      <a href="#faq">자주 묻는 질문</a>
+    </nav>
+    <a href="#try" class="btn primary">3분 테스트</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">예민한 사람이 만든 성향 설명서</span>
+      <h1>예민한 게 아니라,<br><span class="hl">설명서가 없었던 거예요.</span></h1>
+      <p class="lead">3분 질문에 답하면 나는 언제 지치고, 뭘 하면 회복되고, 사람들이 나를 어떻게 대해주면 좋은지 한 장으로 정리해 드려요.</p>
+      <div class="cta">
+        <a href="#try" class="btn primary">무료로 내 결과 카드 받기 →</a>
+        <a href="#gift" class="btn">내 사람 설명서 선물하기</a>
+      </div>
+      <p class="meta">전부 무료 · 회원가입 없음 · 진단이 아닌 자기이해 도구예요</p>
+    </div>
+    <div class="hero-art">
+      <div class="duo">
+        <figure><img src="assets/char/faces_worried.png" alt="걱정하는 캐릭터"><figcaption>설명서 없을 때</figcaption></figure>
+        <span class="arrow pen">→</span>
+        <figure class="after"><img src="assets/char/poses_idea.png" alt="깨달은 캐릭터"><figcaption>설명서 읽고 나서</figcaption></figure>
+      </div>
+      <div class="bubble b1 pen">나 왜 이렇게 쉽게 지치지?</div>
+      <div class="bubble b2 pen">소리 큰 회식 = 배터리 0%</div>
+      <div class="bubble b3 pen">아, 나 이런 사람이구나</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag pen">이런 적 있죠</div>
+      <h2>남들은 괜찮다는데<br>나만 유난인 것 같을 때</h2>
+    </div>
+    <div class="pains">
+      <div class="pain"><img src="assets/char/faces_surprised.png" alt="놀란 표정의 안경 캐릭터"><div class="q pen">"별것도 아닌 말이 밤새 맴돌아요"</div><p>상대 말투 하나에 하루가 흔들리는 사람. 내가 약한 게 아니라 신호를 크게 받는 구조일 수 있어요.</p></div>
+      <div class="pain"><img src="assets/char/faces_worried.png" alt="지친 표정의 안경 캐릭터"><div class="q pen">"사람 만나고 오면 이틀은 누워 있어요"</div><p>사람을 싫어하는 게 아니라 회복 방식이 다른 거예요. 나한테 맞는 충전법이 따로 있어요.</p></div>
+      <div class="pain"><img src="assets/char/faces_serious.png" alt="고민하는 표정의 안경 캐릭터"><div class="q pen">"내 사람한테 설명하기가 어려워요"</div><p>"나 원래 이래"보다 한 장짜리 설명서가 더 쉽게 전해져요. 그래서 공유 카드를 만들었어요.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag pen">어떻게 하나요</div>
+      <h2>3분이면 끝나요</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><img src="assets/char/poses_think.png" alt="생각하는 캐릭터"><div class="num">1</div><h3>질문 24개에 답하기</h3><p>감각·감정·관계·일 네 가지 영역. 생년월일을 넣으면 타고난 기질(사주 일간)도 참고로 같이 봐요.</p><div class="price">무료</div></div>
+      <div class="step"><img src="assets/char/poses_explain.png" alt="결과를 설명하는 캐릭터"><div class="num">2</div><h3>결과 카드 받기</h3><p>내 유형 이름, 한 줄 설명, 지치는 순간·회복법 3가지. 인스타 스토리 크기로 바로 저장돼요.</p><div class="price">무료 · 공유용</div></div>
+      <div class="step"><img src="assets/char/poses_point.png" alt="설명서를 가리키는 캐릭터"><div class="num">3</div><h3>전체 사용설명서</h3><p>일·연애·가족·돈 상황별 대처법, 나랑 잘 맞는 사람·부딪히는 사람까지 12쪽 PDF로.</p><div class="price">무료</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRY -->
+<section id="try" class="try">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag pen">미리 해보기</div>
+      <h2>딱 3문제만 먼저 풀어보세요</h2>
+      <p>맛보기 미니 버전이에요. 전체 테스트는 24문항이에요.</p>
+    </div>
+    <div class="try-grid">
+      <div class="quiz">
+        <div class="bar"><i id="bar"></i></div>
+        <div id="qbox">
+          <div class="qtext" id="qtext"></div>
+          <div class="opts" id="opts"></div>
+        </div>
+        <div class="result" id="done">
+          <div class="qtext">결과가 나왔어요 →</div>
+          <p style="color:var(--sub);margin-bottom:18px">오른쪽이 실제로 받게 될 결과 카드 모양이에요. 전체 테스트를 하면 더 정확해져요.</p>
+          <button class="btn" onclick="restart()">다시 해보기</button>
+        </div>
+      </div>
+      <div class="card" id="card">
+        <div class="top"><span>나 사용설명서 · No.0417</span><span class="stamp">공식 예민인</span></div>
+        <img class="face" id="cface" src="assets/char/faces_kind.png" alt="결과 유형 캐릭터">
+        <div class="type pen" id="ctype">조용한 레이더형</div>
+        <div class="one" id="cone">작은 신호도 먼저 알아채는 사람</div>
+        <ul id="clist">
+          <li>지치는 순간: 여러 사람이 동시에 말할 때</li>
+          <li>회복법: 혼자 걷기 20분, 이어폰 없이</li>
+          <li>나를 대하는 법: 결론부터 말해주세요</li>
+        </ul>
+        <div class="meter">
+          <span>감각 민감</span><b><i id="m1" style="width:82%"></i></b>
+          <span>감정 공명</span><b><i id="m2" style="width:70%"></i></b>
+          <span>회복 속도</span><b><i id="m3" style="width:35%"></i></b>
+        </div>
+        <div class="foot"><span>나도 해보기 → na-manual.pages.dev</span><span>by 예민한자립가</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag pen">설명서 종류</div>
+      <h2>필요한 만큼만 고르세요</h2>
+      <p>세 가지 모두 무료예요. 결제도, 회원가입도 없어요.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="name">결과 카드</div>
+        <div class="amt">무료</div>
+        <ul><li>내 유형 이름 + 한 줄 설명</li><li>지치는 순간·회복법 3가지</li><li>스토리용 공유 이미지</li><li>'공식 예민인' 인증 도장</li></ul>
+        <a href="#try" class="btn">무료로 시작</a>
+      </div>
+      <div class="plan best">
+        <div class="name">내 사용설명서</div>
+        <div class="amt">무료 <small>PDF</small></div>
+        <ul><li>12쪽 PDF (일·연애·가족·돈)</li><li>상황별 '이럴 땐 이렇게' 카드</li><li>잘 맞는 유형 / 부딪히는 유형</li><li>타고난 기질(사주 일간) 참고 1쪽</li></ul>
+        <a href="#try" class="btn dark">테스트 하고 받기</a>
+      </div>
+      <div class="plan">
+        <div class="name">내 사람 사용설명서</div>
+        <div class="amt">무료 <small>선물</small></div>
+        <ul><li>상대가 직접 테스트 → 둘 다 받음</li><li>우리 둘 궁합 1장 추가</li><li>서로 조심할 말·해주면 좋은 말</li><li>카톡 선물 링크로 보내기</li></ul>
+        <a href="#gift" class="btn">선물 보내기</a>
+      </div>
+    </div>
+      </div>
+</section>
+
+<!-- GIFT -->
+<section id="gift">
+  <div class="wrap gift-grid">
+    <div class="gift-art">
+      <div class="msg"><div class="who">나 → 남자친구</div>나 요즘 왜 예민한지 설명하기 어려워서… 이거 한번 해봐 결과 같이 보자</div>
+      <div class="msg me"><div class="who">남자친구</div>했어. 나 '느긋한 정원사형'이래. 너랑 궁합 카드 왔는데 "결론부터 말해주기" 나 이거 진짜 못했다</div>
+      <div class="msg"><div class="who">나</div>ㅋㅋ 그니까. 이제 알았지?</div>
+      <div class="pair"><img src="assets/char/faces_laugh.png" alt="웃는 캐릭터"><img src="assets/char/hair_explain.png" alt="손 흔드는 캐릭터"></div>
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:20px">
+        <div class="tag pen">선물하기</div>
+        <h2>말로 하기 어려운 걸<br>설명서로 건네요</h2>
+        <p>연인, 친구, 가족, 팀원에게 링크를 보내면 상대도 테스트를 하고, 두 사람 모두 서로의 설명서를 받아요. 생일·기념일 선물로도 많이 쓰일 거라고 보고 있어요.</p>
+      </div>
+      <a href="#plans" class="btn primary">선물 링크 만들기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAKER -->
+<section>
+  <div class="wrap">
+    <div class="maker">
+      <img src="assets/char/hair_happy.png" alt="만든 사람 캐릭터">
+      <div>
+        <div class="tag pen" style="font-size:26px;color:var(--blue)">만든 사람</div>
+        <blockquote>"13년 동안 예민한 나를 고치려고만 했어요. 고칠 게 아니라 설명서가 필요했다는 걸 늦게 알았죠. 제가 갖고 싶었던 걸 만들었어요."</blockquote>
+        <div class="by">유튜브 <b>예민한자립가</b> · 예민한 사람이 알려주는 심리학</div>
+      </div>
+    </div>
+    <div class="reviews">후기 자리 — 실제 사용자 후기를 받으면 채워요 (가짜 후기는 넣지 않음)</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-head"><div class="tag pen">자주 묻는 질문</div><h2>궁금한 거</h2></div>
+    <details><summary>심리 검사나 진단인가요?</summary><p>아니요. 의학적 진단이 아니라 나를 이해하는 데 도움을 주는 자기이해 도구예요. 힘든 상태가 오래 가면 전문가 상담을 권해요.</p></details>
+    <details><summary>사주는 꼭 넣어야 하나요?</summary><p>선택이에요. 생년월일을 넣으면 타고난 기질을 참고용 1쪽으로 더 드려요. 과학적 결과처럼 쓰지 않아요.</p></details>
+    <details><summary>회원가입이 필요한가요?</summary><p>무료 결과 카드는 가입 없이 바로 받아요. 전체 설명서 PDF는 이메일만 있으면 보내드려요.</p></details>
+    <details><summary>정말 다 무료예요?</summary><p>네. 결과 카드, 전체 설명서 PDF, 선물하기까지 모두 무료예요. 결제 정보는 받지 않아요.</p></details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <img src="assets/char/poses_explain.png" alt="안내하는 캐릭터">
+    <h2>오늘 3분, 평생 쓰는 설명서</h2>
+    <p>나를 탓하던 시간을 나를 이해하는 시간으로 바꿔요.</p>
+    <a href="#try" class="btn primary">무료 테스트 시작 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <span>© 2026 나 사용설명서 · 예민한자립가</span>
+    <span>이용약관 · 개인정보처리방침 · 사업자 정보(등록 후 기재)</span>
+  </div>
+</footer>
+
+<script>
+  const Q = [
+    {q:"카페 옆자리 대화가 계속 귀에 들어와서 내 일에 집중이 안 된다.", o:["완전 나","가끔 그래","별로 신경 안 씀"]},
+    {q:"친구가 '괜찮아'라고 했는데 말투가 평소와 달라서 하루 종일 신경 쓰인 적이 있다.", o:["자주 있음","가끔 있음","거의 없음"]},
+    {q:"주말 약속이 연달아 두 개 잡히면?", o:["생각만 해도 피곤","하나 정도는 미룬다","신난다"]},
+  ];
+  const TYPES = [
+    {f:"faces_kind",t:"조용한 레이더형", o:"작은 신호도 먼저 알아채는 사람", l:["지치는 순간: 여러 사람이 동시에 말할 때","회복법: 혼자 걷기 20분, 이어폰 없이","나를 대하는 법: 결론부터 말해주세요"], m:[86,78,30]},
+    {f:"faces_smile",t:"깊은 우물형", o:"한 번 마음 주면 오래 가는 사람", l:["지치는 순간: 애매한 말투를 들었을 때","회복법: 하루 끝 3줄 쓰기","나를 대하는 법: 서운하면 바로 말해주세요"], m:[60,88,45]},
+    {f:"faces_laugh",t:"느긋한 정원사형", o:"자기 속도로 천천히 피어나는 사람", l:["지치는 순간: 갑자기 바뀌는 일정","회복법: 좋아하는 일 하나에 몰입","나를 대하는 법: 미리 알려주세요"], m:[35,48,72]},
+  ];
+  let i=0, score=0;
+  const $=id=>document.getElementById(id);
+  function render(){
+    $("bar").style.width = (i/Q.length*100)+"%";
+    if(i>=Q.length){ $("qbox").style.display="none"; $("done").classList.add("on"); show(); return; }
+    $("qtext").textContent = `Q${i+1}. ${Q[i].q}`;
+    $("opts").innerHTML = "";
+    Q[i].o.forEach((txt,k)=>{
+      const b=document.createElement("button"); b.className="opt"; b.textContent=txt;
+      b.onclick=()=>{ score+=k; i++; render(); };
+      $("opts").appendChild(b);
+    });
+  }
+  function show(){
+    const t = TYPES[score<=2?0:score<=4?1:2];
+    $("cface").src=`assets/char/${t.f}.png`; $("ctype").textContent=t.t; $("cone").textContent=t.o;
+    $("clist").innerHTML=t.l.map(x=>`<li>${x}</li>`).join("");
+    ["m1","m2","m3"].forEach((id,k)=>$(id).style.width=t.m[k]+"%");
+    $("card").animate([{transform:"rotate(-2deg) scale(.96)"},{transform:"none"}],{duration:350,easing:"ease-out"});
+  }
+  function restart(){ i=0; score=0; $("qbox").style.display=""; $("done").classList.remove("on"); render(); }
+  render();
+</script>
+</body>
+</html>
